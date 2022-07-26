@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test123
+  labels:
+    app: test123
+spec:
+  selector:
+    matchLabels:
+      app:  test123
+
+  template:
+    metadata:
+      labels:
+        app: test123
+    spec:
+      containers:
+          - name: test123
+            image: fsfsfsdffsf1.azurecr.io/test123:v1
+            imagePullPolicy: IfNotPresent
+            securityContext:
+              runAsNonRoot: false
+      imagePullSecrets:
